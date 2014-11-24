@@ -1,0 +1,50 @@
+{% extends "SvBlogBundle:Layouts:main.html.twig" %}
+
+{% block title %}
+    Головна сторінка
+{% endblock %}
+
+{% block content %}
+    <div id="posts_list">
+        <div>
+            <a href="{{ path("post_add_get") }}">Створити новий запис</a>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <div class="title"><a href="{{ path("view_post", {"slug" : post.slugPost}) }}">{{ post.title }}</a></div>
+                <div>{{ post.text|slice(0,150) }}</div>
+                <div>{{ post.author }}</div>
+                <div>{{ post.createdAt.date|date("d.m.Y H:i:s") }}</div>
+                {% if(post.tag) %}
+                    <div>Теги:
+                        {% for tag in post.tag %}
+                            <a href="{{ path('tag_page', {'slug': tag.hashSlug}) }}">#{{ tag.hashTag }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% else %}
+            <div>
+                <h3>На даний момент в блогі немає ні одного запису</h3>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="top_tags_list">
+        <div>
+            <a href="{{ path("tag_add_page") }}">Створити новий тег</a>
+        </div>
+        <span>10 найпопулярніших тегів</span>
+        <ul>
+            {% for tag in tags %}
+            <li>
+                <a href="{{ path('tag_page', {'slug': tag.hashSlug}) }}">{{ tag.hashTag }}</a>
+            </li>
+
+            {% endfor %}
+
+        </ul>
+    </div>
+{% endblock %}

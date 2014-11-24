@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} | Home Blog</title>
+
+        <link href="{{ asset('bundles/svblog/css/common.css') }}" rel="stylesheet" />
+
+        <script src="{{ asset('bundles/svblog/js/jquery.js') }}" ></script>
+        <script src="{{ asset('bundles/svblog/js/common.js') }}" ></script>
+    </head>
+
+    <body>
+        <div id="webber">
+            <header>
+                <div id="logo">
+                    Home Blog
+                </div>
+                {% include "SvBlogBundle:Layouts:header.html.twig" %}
+            </header>
+
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <footer>
+                ©VanyaShuba
+            </footer>
+        </div>
+    </body>
+</html>

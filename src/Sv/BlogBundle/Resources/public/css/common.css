@@ -1,0 +1,60 @@
+#webber{
+    width: 90%;
+    border: 1px solid #000000;
+    margin: 4px auto;
+}
+
+#webber header div[id=logo]{
+    width: 100px;
+    float: left;
+    margin: 0px 20px;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: #5eb5e0;
+    padding: 10px;
+    text-align: center;
+}
+
+#webber header nav{
+    margin-left: 200px;
+}
+
+#webber header nav ul li{
+    float: left;
+    margin: 0px 10px;
+    list-style: none;
+}
+
+#webber #content{
+    clear: both;
+}
+
+#webber #content #posts_list{
+    float: left;
+    width: 65%;
+    border-right: 1px dashed #000000;
+    margin-right: 20px;
+}
+
+#webber #content #posts_list > div{
+    margin: 20px 0px;
+
+}
+
+#webber #content #posts_list > div .title{
+    text-align: center;
+}
+
+#webber #content #top_tags_list{
+    margin-left: 20px;
+}
+
+#webber #content #top_tags_list ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#webber footer{
+    clear: both;
+    text-align: center;
+}

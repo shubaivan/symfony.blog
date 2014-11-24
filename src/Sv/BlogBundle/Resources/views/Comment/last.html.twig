@@ -1,0 +1,31 @@
+{% extends 'SvBlogBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Останні коментарі
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h3>
+            20 останніх коментарів
+        </h3>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <div>
+                        <div><b>Автор:</b> {{ comment.author }}</div>
+                        <div><b>Комментар:</b> {{ comment.text }}</div>
+                        <div><b>Дата створення:</b> {{ comment.createdAt|date("d.m.Y H:i:s") }}</div>
+                        <div><b>Стаття: </b><a href="{{ path("view_post", { "slug" : comment.post.slugPost}) }}">{{ comment.post.title }}</a></div>
+                    </div>
+                </li>
+            {% else %}
+                <li>
+                    <h3>
+                        На даний момент не створено ні одного комментаря
+                    </h3>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

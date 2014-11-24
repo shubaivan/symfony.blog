@@ -1,0 +1,19 @@
+{% extends 'SvBlogBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Список останніх тегів
+{% endblock %}
+
+{% block content %}
+    <div>
+        <ul>
+            {% for tag in tags %}
+                <li>
+                    <a href='{{ path('tag_page', { "slug" : tag.hashSlug }) }}'>{{ tag.hashTag }}</a>
+                </li>
+            {% else %}
+
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'SvBlogBundle:Layouts:main.html.twig' %}
+
+{% block title %}
+    Список постів тегу {{ tag.hashTag }}
+{% endblock %}
+
+
+{% block content %}
+    <div id="post_list">
+        {% for post in tag.post %}
+            <div>
+                <div class="title"><a href="{{ path('view_post', {'slug' : post.slugPost}) }}">{{ post.title }}</a></div>
+                <div>{{ post.text|slice(0,150) }}</div>
+                <div>{{ post.author }}</div>
+                <div>{{ post.createdAt.date|date("d.m.Y H:i:s") }}</div>
+                {% if(post.tag) %}
+                    <div>Теги:
+                        {% for tag in post.tag %}
+                            <a href="{{ path('tag_page', {'slug': tag.hashSlug}) }}">#{{ tag.hashTag }}</a>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+            </div>
+        {% else %}
+            <div>
+                <h3>На даний момент в блогі немає ні одного запису з таким тегом</h3>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
