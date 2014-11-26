@@ -2,8 +2,4 @@ blogger_blog:
     resource: "@BloggerBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
-sv_blog:
-    resource: "@SvBlogBundle/Controller/"
-    type:     annotation
-    prefix:   /lite
 
