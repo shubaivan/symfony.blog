@@ -32,3 +32,8 @@ BloggerBlogBundle_comment_create:
     requirements:
         _method:  POST
         blog_id: \d+
+BloggerBlogBundle_sidebar:
+    pattern: /sidebar
+    defaults: { _controller: BloggerBlogBundle:Page:sidebar }
+    requirements:
+        _method: GET
