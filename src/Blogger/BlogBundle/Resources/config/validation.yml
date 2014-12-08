@@ -1,0 +1,4 @@
+Blogger\BlogBundle\Entity\Blog:
+    properties:
+        file:
+            - Image: ~

@@ -49,11 +49,11 @@ class PageControllerTest extends WebTestCase
         $form['contact[body]']       = 'The comment body must be at least 50 characters long as there is a validation constrain
     on the Enquiry entity';
 
-//        $crawler = $client->submit($form);
+        $crawler = $client->submit($form);
 //
 //
-//        $crawler = $client->followRedirect();
+//        $client->followRedirect();
 
-        $this->assertEquals(1, $crawler->filter('blogger-notice:contains("Ваш запрос успешно отправлен. Спасибо!")')->count());
+        $this->assertEquals(1, $crawler->filter('.blogger-notice:contains("Ваш запрос успешно отправлен. Спасибо!")')->count());
     }
 }
