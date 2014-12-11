@@ -1,0 +1,16 @@
+{% extends '@BloggerBlog/layout.html.twig' %}
+
+
+
+{% block body %}
+    {% block reg %}
+        <nav>
+            <ul class="navigation">
+                <li><a href="{{ path('fos_user_registration_register') }}">Регистрация</a></li>
+                <li><a href="{{ path('fos_user_profile_show') }}">Свой кабинет</a></li>
+
+            </ul>
+        </nav>
+    {% endblock %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
