@@ -1,8 +1,8 @@
 BloggerBlogBundle_homepage:
-    pattern:  /
-    defaults: { _controller: BloggerBlogBundle:Page:index }
+    pattern:  /{_locale}
+    defaults: { _controller: BloggerBlogBundle:Page:index, _locale: '' }
     requirements:
-        _method:  GET
+        _locale: en|ru
 BloggerBlogBundle_about:
     pattern:  /about
     defaults: { _controller: BloggerBlogBundle:Page:about }
